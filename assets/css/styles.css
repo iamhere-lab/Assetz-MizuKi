@@ -56,7 +56,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .site-header { position: sticky; top: 0; z-index: 40; background: var(--white); box-shadow: 0 2px 12px rgba(0, 0, 0, .06); }
 .header-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: inline-flex; align-items: center; min-height: 44px; }
-.brand img { height: 38px; width: auto; max-width: none; }
+.brand { gap: 14px; text-decoration: none; color: var(--ink); }
+.brand img { height: 40px; width: auto; max-width: none; }
+.brand-sep { width: 1px; height: 34px; background: var(--ink); opacity: .55; }
+.brand-tag { font-size: 11.5px; font-weight: 500; line-height: 1.3; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
 .phone-pill { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border: 1px solid var(--ink); border-radius: var(--pill); background: transparent; font-size: 16px; font-weight: 500; text-decoration: none; letter-spacing: .01em; transition: background-color .2s, color .2s; }
 .phone-pill:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
 .phone-pill.is-cta { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
@@ -65,7 +68,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .flag i:nth-child(1) { background: #ff9933; }
 .flag i:nth-child(2) { background: #fff; }
 .flag i:nth-child(3) { background: #138808; }
-@media (max-width: 480px) { .brand img { height: 30px; } .phone-pill { font-size: 14px; padding: 0 12px; } .phone-pill.is-cta { font-size: 12px; } }
+@media (max-width: 480px) { .brand { gap: 9px; } .brand img { height: 30px; } .brand-sep { height: 26px; } .brand-tag { font-size: 9px; letter-spacing: .08em; } .header-inner { gap: 8px; } .phone-pill .flag { display: none; } .phone-pill { font-size: 14px; padding: 0 12px; } .phone-pill.is-cta { font-size: 12px; } }
+.phone-pill { white-space: nowrap; flex: 0 0 auto; }
+.brand-tag { white-space: nowrap; }
+@media (max-width: 380px) { .phone-pill { font-size: 13px; padding: 0 10px; min-height: 40px; } .brand img { height: 27px; } }
 
 /* Hero */
 .banner { background: var(--dark); }

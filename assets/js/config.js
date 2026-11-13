@@ -12,9 +12,9 @@ window.SS_CONFIG = {
   callConversionSendTo: "",           // e.g. "AW-123456789/AbCdEf"
 
   // Sales contact
-  phoneDisplay: "",                   // e.g. "98765 43210"
-  phoneE164: "",                      // e.g. "+919876543210"
-  whatsappNumber: "",                 // e.g. "919876543210"
+  phoneDisplay: "76766 65738",        // e.g. "98765 43210"
+  phoneE164: "+917676665738",         // e.g. "+919876543210"
+  whatsappNumber: "917676665738",     // e.g. "919876543210"
   whatsappMessage: "Hi, I'd like the price sheet and floor plans for Assetz Mizu & Ki.",
 
   // Behaviour
