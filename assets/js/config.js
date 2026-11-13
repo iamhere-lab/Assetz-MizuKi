@@ -22,8 +22,8 @@ window.SS_CONFIG = {
   brochureUrl: "",                    // optional: opened after a brochure enquiry
 
   // Compliance
-  partnerName: "",                    // authorised channel partner's legal name
-  agentRera: "",                      // channel partner's agent RERA number
+  partnerName: "Buildnest Realty Pvt Ltd", // authorised channel partner's legal name
+  agentRera: "PRM/KA/RERA/1251/446/AG/210729/002406", // channel partner's agent RERA number
   consentEntity: "Assetz Property Group and its authorised sales partners",
   siteUrl: "",
   privacyUrl: ""
