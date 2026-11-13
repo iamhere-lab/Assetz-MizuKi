@@ -99,6 +99,14 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   .hero-specs .is-price { padding: 21px 0; }
   .hero-specs .is-price dd { font-size: 28px; }
 }
+/* A little colour in the hero: warm sand labels, leaf-green rules, gold price; image left more vivid */
+.hero > img { filter: saturate(1.18) brightness(1.06); }
+.hero-shade { background: linear-gradient(90deg, rgba(10, 16, 14, .78) 0%, rgba(10, 16, 14, .52) 34%, rgba(10, 16, 14, .16) 62%, rgba(10, 16, 14, .05) 100%), linear-gradient(0deg, rgba(10, 16, 14, .45), transparent 45%); }
+.hero-specs { border-top-color: rgba(168, 201, 150, .55); }
+.hero-specs div { border-bottom-color: rgba(168, 201, 150, .55); }
+.hero-specs dt { color: #e9c9a0; }
+.hero-specs .is-price dd { color: #f3d9a4; }
+@media (max-width: 899px) { .hero-shade { background: linear-gradient(rgba(10, 16, 14, .55) 0%, rgba(10, 16, 14, .62) 40%, rgba(10, 16, 14, .78) 100%); } }
 .hero-form { background: var(--white); border-radius: var(--radius); padding: 22px 20px 18px; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6); max-width: 440px; width: 100%; margin: 0 auto; }
 .hf-tag { margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--beige); }
 .hero-form .form-title { font-size: 24px; }
