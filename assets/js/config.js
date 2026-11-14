@@ -8,7 +8,7 @@ window.SS_CONFIG = {
   thankYouUrl: "",                    // optional redirect after a successful enquiry
 
   // Tracking
-  gtmId: "",                          // e.g. "GTM-XXXXXXX"
+  gtmId: "",                          // leave empty: GTM-K2DVVNWZ is installed directly in the <head> of index.html
   callConversionSendTo: "",           // e.g. "AW-123456789/AbCdEf"
 
   // Sales contact
