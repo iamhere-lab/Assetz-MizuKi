@@ -25,6 +25,6 @@ window.SS_CONFIG = {
   partnerName: "Buildnest Realty Pvt Ltd", // authorised channel partner's legal name
   agentRera: "PRM/KA/RERA/1251/446/AG/210729/002406", // channel partner's agent RERA number
   consentEntity: "Assetz Property Group and its authorised sales partners",
-  siteUrl: "",
+  siteUrl: "https://mizuandki.assetzproperties.in/",
   privacyUrl: "privacy.html"
 };
