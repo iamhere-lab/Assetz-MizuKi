@@ -2,8 +2,8 @@
    Anything left empty is simply switched off on the page. */
 window.SS_CONFIG = {
   // Lead delivery: webhook that receives each enquiry as JSON (Pabbly, Leadrat, Apps Script...).
-  leadEndpoint: "",
-  leadEndpointMode: "cors",          // "cors" or "no-cors"
+  leadEndpoint: "https://connect.pabbly.com/webhook-listener/webhook/IjU3NjUwNTY1MDYzNTA0MzY1MjZjNTUzNyI_3D_pc/IjU3NjcwNTZiMDYzNTA0MzE1MjY5NTUzMjUxMzUi_pc",
+  leadEndpointMode: "form",          // "form" (URL-encoded, for Pabbly), "cors" (JSON) or "no-cors"
   leadEndpointSimpleRequest: false,   // true = send as text/plain (avoids a CORS preflight)
   thankYouUrl: "thank-you.html",                    // optional redirect after a successful enquiry
 

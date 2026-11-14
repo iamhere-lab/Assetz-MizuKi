@@ -150,7 +150,8 @@
       page_url: location.href,
       submitted_at: new Date().toISOString()
     };
-    for (var k in attribution) payload[k] = attribution[k];
+    // Always send every attribution field (empty when absent) so the webhook mapping stays stable.
+    ATTR_KEYS.concat(["landing_page", "referrer"]).forEach(function (k) { payload[k] = attribution[k] || ""; });
 
     // Same number within 30 days: thank them, but don't post a duplicate lead.
     var seen = {};
@@ -161,13 +162,19 @@
     btn.disabled = true; btn.textContent = "Sending…"; status(form, "");
     var ctl = new AbortController();
     var timer = setTimeout(function () { ctl.abort(); }, 15000);
-    fetch(C.leadEndpoint, {
-      method: "POST",
-      mode: C.leadEndpointMode === "no-cors" ? "no-cors" : "cors",
-      headers: { "Content-Type": C.leadEndpointSimpleRequest || C.leadEndpointMode === "no-cors" ? "text/plain;charset=UTF-8" : "application/json" },
-      body: JSON.stringify(payload),
-      signal: ctl.signal
-    }).then(function (r) {
+    // "form" mode posts URL-encoded fields without CORS (works with Pabbly / Zapier style webhooks,
+    // which read form fields but don't send CORS headers). The reply can't be read in that mode.
+    var mode = C.leadEndpointMode || "cors";
+    var req = { method: "POST", signal: ctl.signal };
+    if (mode === "form") {
+      req.mode = "no-cors";
+      req.body = new URLSearchParams(payload);
+    } else {
+      req.mode = mode === "no-cors" ? "no-cors" : "cors";
+      req.headers = { "Content-Type": C.leadEndpointSimpleRequest || mode === "no-cors" ? "text/plain;charset=UTF-8" : "application/json" };
+      req.body = JSON.stringify(payload);
+    }
+    fetch(C.leadEndpoint, req).then(function (r) {
       if (r.type !== "opaque" && !r.ok) throw new Error("HTTP " + r.status);
       seen[lead.phone] = Date.now();
       store.set("localStorage", "mk_leads", JSON.stringify(seen));
