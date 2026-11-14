@@ -243,7 +243,7 @@
     d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
   });
   var delay = Number(C.popupDelaySeconds) || 0;
-  if (delay > 0 && !store.get("sessionStorage", "mk_popup") && store.get("localStorage", "mk_unlocked") !== "1") {
+  if (delay > 0 && modal && !store.get("sessionStorage", "mk_popup") && store.get("localStorage", "mk_unlocked") !== "1") {
     setTimeout(function () {
       var lb = $("#lightbox");
       if (engaged || (lb && lb.open)) return;

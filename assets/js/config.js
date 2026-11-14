@@ -5,7 +5,7 @@ window.SS_CONFIG = {
   leadEndpoint: "",
   leadEndpointMode: "cors",          // "cors" or "no-cors"
   leadEndpointSimpleRequest: false,   // true = send as text/plain (avoids a CORS preflight)
-  thankYouUrl: "",                    // optional redirect after a successful enquiry
+  thankYouUrl: "thank-you.html",                    // optional redirect after a successful enquiry
 
   // Tracking
   gtmId: "",                          // leave empty: GTM-K2DVVNWZ is installed directly in the <head> of index.html
@@ -26,5 +26,5 @@ window.SS_CONFIG = {
   agentRera: "PRM/KA/RERA/1251/446/AG/210729/002406", // channel partner's agent RERA number
   consentEntity: "Assetz Property Group and its authorised sales partners",
   siteUrl: "",
-  privacyUrl: ""
+  privacyUrl: "privacy.html"
 };
